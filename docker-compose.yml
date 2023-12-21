@@ -78,6 +78,9 @@ services:
       - RECORDING_DISABLED=${RECORDING_DISABLED:-false}
       - SERVER_ID_IS_HOSTNAME=${SERVER_ID_IS_HOSTNAME:-false}
       - RAILS_LOG_TO_STDOUT=${RAILS_LOG_TO_STDOUT:-false}
+      - WEB_CONCURRENCY=24
+      - RAILS_MAX_THREADS=10
+      - REDIS_POOL=10
     volumes:
       - ./log/scalelite-api/:/srv/scalelite/log/
       - ${SCALELITE_RECORDING_DIR:-/mnt/scalelite-recordings/var/bigbluebutton}:/var/bigbluebutton
