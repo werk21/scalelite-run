@@ -6,7 +6,7 @@ volumes:
 
 services:
   postgres:
-    image: postgres:11-alpine
+    image: postgres:16-bookworm
     container_name: postgres
     restart: unless-stopped
     environment:
